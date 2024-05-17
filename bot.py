@@ -242,7 +242,7 @@ LOG_FILE_PATH = "/var/log/postgresql/postgresql.log"
 
 def get_repl_logs(update: Update, context):
     connect_vm()
-    stdin, stdout, stderr = client.exec_command(f'echo {password1} | sudo -S docker logs db_container 2>&1 | grep replication | tail -n 15')
+    stdin, stdout, stderr = client.exec_command('cat /var/log/postgresql/postgresql-15-main.log | grep -i repl | head -10')
     update.message.reply_text(print_info(stdout,stderr))
 
 def echo(update: Update, context):
