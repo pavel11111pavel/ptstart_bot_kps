@@ -1,0 +1,29 @@
+all:
+  vars:
+    DB_REPL_USER: repl_user
+    DB_REPL_PASSWORD: Qq12345
+    POSTGRES_VERSION: 15
+    DB_HOST: 192.168.0.104
+  hosts:
+    host01:
+      ansible_host: 192.168.0.104
+      ansible_user: root
+      ansible_ssh_password: 654321
+      github_repo: https://github.com/pavel11111pavel/ptstart_bot_kps.git
+      dir: /root/ansible
+      TOKEN: 
+      RM_HOST: 192.168.0.104
+      RM_PORT: 22
+      RM_USER: root
+      RM_PASSWORD: 654321
+      DB_USER: postgres
+      DB_PASSWORD: Qq12345
+      DB_PORT: 5432
+      DB_DATABASE: base_1
+      DB_HOST: 192.168.0.104
+      DB_REPL_HOST: db_repl
+      DB_REPL_PORT: 5432
+    host02:
+      ansible_host: 192.168.0.102
+      ansible_user: root
+      ansible_ssh_password: 654321
