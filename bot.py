@@ -213,12 +213,12 @@ def get_critical(update: Update, context):
 
 def get_ps(update: Update, context):
     connect_vm()
-    stdin, stdout, stderr = client.exec_command('ps') 
+    stdin, stdout, stderr = client.exec_command('ps | head -10') 
     update.message.reply_text(print_info(stdout,stderr))
 
 def get_ss(update: Update, context):
     connect_vm()
-    stdin, stdout, stderr= client.exec_command('ss -tulpn')
+    stdin, stdout, stderr= client.exec_command('ss -tulpn | head -10')
     update.message.reply_text(print_info(stdout,stderr))
 
 def get_apt_list(update: Update, context):
